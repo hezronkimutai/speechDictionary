@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server --mode development",
-    "start": "webpack --mode production"
+    "start": "webpack --mode production",
+    "coverage": "codecov",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "classnames": "2.2.6",
-    "react-scripts": "1.1.4",
     "and": "^0.0.3",
     "babel-loader": "^8.0.6",
+    "classnames": "2.2.6",
+    "codecov": "^3.6.1",
     "css-loader": "^3.2.1",
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -23,6 +25,7 @@
     "react-hot-loader": "^4.12.15",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "1.1.4",
     "redux": "^4.0.4",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
@@ -36,6 +39,18 @@
     "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.12.0",
     "style-loader": "^1.0.1"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
