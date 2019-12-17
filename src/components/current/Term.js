@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {addCurrentId } from "../redux/actions";
+import {addCurrentId } from "../../redux/actions";
 
 
  const Term = ( props ) => {  
@@ -8,7 +8,7 @@ import {addCurrentId } from "../redux/actions";
     props.addCurrentId(currentId);
   };
    return(
-  <div className="pastTerm">
+  <div className="StoredTermId">
           <button className="" onClick={()=>handleAddCurrentId(props.term.id)}>{props.term.id}</button>
 
   </div>
