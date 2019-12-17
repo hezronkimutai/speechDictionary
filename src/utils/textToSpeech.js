@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 export const convert = textToConvert => {
+=======
+const textToSpeech = textToConvert => {
+>>>>>>> ch(refactor code)
   var audioCtx = new AudioContext();
   var source = audioCtx.createBufferSource();
   const options = {
@@ -44,3 +48,4 @@ export const convert = textToConvert => {
 
   source.start(0);
 };
+export default textToSpeech;

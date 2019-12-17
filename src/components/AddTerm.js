@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTerm } from "../redux/actions";
+<<<<<<< HEAD
 import axios from 'axios';
 import {convert} from '../utils/textToSpeech'
 
@@ -22,8 +23,18 @@ handleAddTerm = () => {
       this.handleGetMeaning(this.state.input);
       this.props.addTerm(this.state.termDetails);
       this.setState({ input: "" });
+=======
+import { addInput } from "../redux/actions";
+import axios from "axios";
+
+const SearchTerm = props => {
+  const input = props.terms.input;
+  const updateInput = input => {
+>>>>>>> ch(refactor code)
     
+    props.addInput(input);
   };
+<<<<<<< HEAD
   render() {
 
     return (
@@ -49,8 +60,30 @@ handleAddTerm = () => {
     );
   }
 }
+=======
+  const handleGetMeaning = async ( term) => {
+    const BASE_URL = "http://api.urbandictionary.com/v0/define?term=";
+    const response = await axios.get(`${BASE_URL}${term}`);
+    props.addTerm(response.data);
+  };
+  const handleAddTerm = () => {
+    handleGetMeaning(input);
+  };
+  return (
+    <div>
+      <input onChange={e => updateInput(e.target.value)} value={input} />
+      <button className="" onClick={handleAddTerm}>
+        Add Term
+      </button>
+    </div>
+  );
+};
 
-export default connect(
-  null,
-  { addTerm }
-)(SearchTerm);
+
+const mapStateToProps = state => {
+
+>>>>>>> ch(refactor code)
+
+  return state;
+};
+export default connect( mapStateToProps,{ addTerm,addInput })(SearchTerm);
