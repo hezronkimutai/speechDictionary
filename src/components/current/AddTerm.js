@@ -10,8 +10,14 @@ const SearchTerm = props => {
   };
   
   const handleGetMeaning = async ( term) => {
-    const BASE_URL = "http://api.urbandictionary.com/v0/define?term=";
-    const response = await axios.get(`${BASE_URL}${term}`);
+    const options = {
+      "headers": {
+        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+        "x-rapidapi-key": "b97efcac5emshc17a3a4fdf8e160p1835c6jsn9557deebb035"
+      }
+    }
+    const BASE_URL = "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=";
+    const response = await axios.get(`${BASE_URL}${term}`,options);
     props.addTerm(response.data);
   };
   useEffect(() => {
