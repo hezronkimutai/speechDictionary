@@ -31,10 +31,10 @@ export default function(state = initialState, action) {
       };
     }
     case ADD_CURRENT_ID: {
-      const { content } = action.payload;      
+      const { content } = action.payload; 
       return {
         ...state,
-       input:content
+        currentId:content
       };
     }
     default:

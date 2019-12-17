@@ -1,13 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addTerm } from "../redux/actions";
-import { addInput } from "../redux/actions";
+import { addTerm,addInput } from "../redux/actions";
 import axios from "axios";
 
 const SearchTerm = props => {
   const input = props.terms.input;
   const updateInput = input => {
-    
     props.addInput(input);
   };
   const handleGetMeaning = async ( term) => {
@@ -30,8 +28,6 @@ const SearchTerm = props => {
 
 
 const mapStateToProps = state => {
-
-
   return state;
 };
 export default connect( mapStateToProps,{ addTerm,addInput })(SearchTerm);
