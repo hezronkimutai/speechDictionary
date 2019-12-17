@@ -1,12 +1,16 @@
-import React, { Component } from "react";
-
+import React from "react";
+import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
+import VisibilityFilters from "./components/VisibilityFilters";
 import "./index.css";
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <div>Hello World!</div>;
-  }
+
+export default function App() {
+  return (
+    <div className="todo-app">
+      <h1>Todo List</h1>
+      <AddTodo />
+      <TodoList />
+      <VisibilityFilters />
+    </div>
+  );
 }
-export default App;
