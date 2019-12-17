@@ -6,8 +6,8 @@
   "scripts": {
     "start:dev": "webpack-dev-server --mode development",
     "start": "webpack --mode production",
-    "coverage": "codecov",
-    "test": "jest"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test": "jest && jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "nyc": "^14.1.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15",
@@ -38,6 +39,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
+    "coveralls": "^3.0.9",
     "css-loader": "^3.2.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -47,6 +49,11 @@
     "style-loader": "^1.0.1"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!data/keyMap.js",
+      "!/node_modules/"
+  ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
