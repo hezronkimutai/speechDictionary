@@ -1,5 +1,4 @@
-import { ADD_TERM,ADD_INPUT} from "./actionTypes";
-let nextTermId = 0;
+import { ADD_TERM,ADD_INPUT,ADD_CURRENT_ID} from "./actionTypes";
 
 export const addTerm = content => {
   const word = content.list[0].word;
@@ -15,4 +14,7 @@ export const addInput = content => ({
   type: ADD_INPUT,
   payload: {content}
 });
-
+export const addCurrentId = content => ({
+  type: ADD_CURRENT_ID,
+  payload: {content}
+});
