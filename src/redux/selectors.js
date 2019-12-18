@@ -9,6 +9,8 @@ export const getTermById = (store, id) =>
   getTermsState(store) ? { ...getTermsState(store).byIds[id], id } : {};
 
 export const getTerms = store =>{
+  console.log('llllllll',getAllHistory(store));
+  
   return getAllHistory(store).map(id => getTermById(store, id));
 
 }
