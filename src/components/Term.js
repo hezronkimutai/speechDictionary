@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import Axios from "axios";
 
-
- const Term = ({ term }) => (
+ const Term = ( props ) => {   
+   return(
   <div className="pastTerm">
-      {term}
+      {props.term.id}
   </div>
 );
+ };
 
 export default connect(
   null,
