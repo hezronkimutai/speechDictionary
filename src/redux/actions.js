@@ -14,7 +14,8 @@ export const addInput = content => ({
   type: ADD_INPUT,
   payload: {content}
 });
-export const addCurrentId = content => ({
+export const addCurrentId = content => {
+  return ({
   type: ADD_CURRENT_ID,
   payload: {content}
-});
+})};
