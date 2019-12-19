@@ -1,4 +1,4 @@
-import { ADD_TERM, ADD_INPUT } from "../actionTypes";
+import { ADD_TERM, ADD_INPUT,ADD_CURRENT_ID } from "../actionTypes";
 
 const initialState = {
   terms: [],
@@ -24,6 +24,13 @@ export default function(state = initialState, action) {
       };
     }
     case ADD_INPUT: {
+      const { content } = action.payload;      
+      return {
+        ...state,
+       input:content
+      };
+    }
+    case ADD_CURRENT_ID: {
       const { content } = action.payload;      
       return {
         ...state,
