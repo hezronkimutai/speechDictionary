@@ -1,36 +1,44 @@
+const dotenv =require('dotenv');
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+dotenv.config();
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
-  output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  entry: path.resolve(__dirname, 'build/bundle.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [{
-      test: /\.js$/,
-      include: path.resolve(__dirname, 'src'),
-      use: ['babel-loader']
+    mode: "development",
+    entry: path.resolve(__dirname, 'src/index'),
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader"
+                    }
+                ]
+            }
+        ]
     },
-    {test : /\.css$/, use:['style-loader', 'css-loader']},
-    {test: /\.(jpg|png)$/, use: { loader: 'url-loader'},}]
-  },
-  devServer: {
-    contentBase:  path.resolve(__dirname, 'build'),
-    port: 3000
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "public/index.html" 
-    })
-  ]
-};
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        
+        
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public/'),
+        publicPath: "http://localhost:3000/dist",
+        historyApiFallback: true,
+        port: process.env.PORT || 3000,
+        hotOnly: true
+    },
+}

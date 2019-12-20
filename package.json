@@ -4,9 +4,9 @@
   "description": "A speech dictionary",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start:dev": "webpack-dev-server --mode development",
-    "start": "webpack --mode production",
+    "start": "node server.js",
+    "serve": "webpack-dev-server --mode development --open --config webpack.config.js",
+    "build": "webpack --mode production",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "jest && jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
@@ -56,19 +56,5 @@
     "react-test-renderer": "^16.12.0",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^1.0.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!data/keyMap.js",
-      "!/node_modules/"
-    ],
-    "setupFiles": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
-      "\\.(css|scss)$": "identity-obj-proxy"
-    }
   }
 }
