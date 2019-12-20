@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Term from '../components/Term';
+import Term from '../components/current/Term';
 import configureStore from 'redux-mock-store';
 
 const mockStore = configureStore([]);

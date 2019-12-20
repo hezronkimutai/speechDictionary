@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AllHistory from '../components/AllHistory';
+import AllHistory from '../components/current/AllHistory';
 import configureStore from 'redux-mock-store';
 
 const mockStore = configureStore([]);
