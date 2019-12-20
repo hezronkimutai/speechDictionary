@@ -3,7 +3,7 @@ import { ADD_TERM, ADD_INPUT,ADD_CURRENT_ID } from "../actionTypes";
 const initialState = {
   terms: [],
   currentId:'',
-  input:''
+  input:'word'
 };
 
 export default function(state = initialState, action) {

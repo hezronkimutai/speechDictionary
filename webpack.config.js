@@ -10,11 +10,11 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  // entry: path.resolve(__dirname, 'src/index'),
-  // output: {
-  //   path: path.resolve(__dirname, 'dist'),
-  //   filename: 'bundle.js'
-  // },
+  entry: path.resolve(__dirname, 'build/bundle.js'),
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -25,7 +25,7 @@ module.exports = {
     {test: /\.(jpg|png)$/, use: { loader: 'url-loader'},}]
   },
   devServer: {
-    contentBase:  path.resolve(__dirname, 'dist'),
+    contentBase:  path.resolve(__dirname, 'build'),
     port: 3000
   },
   plugins: [

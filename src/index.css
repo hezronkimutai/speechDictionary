@@ -20,11 +20,14 @@ body {
   width: 100%;
 }
 .navbarcontainer {
-  background-color: #D48C00;
+  background-color: #d48c00;
   display: flex;
   height: 70px;
 }
-.mainContainer{
+.navbarcontainer h2 {
+  margin: auto 5px;
+}
+.mainContainer {
   color: white;
   background-color: #292929;
   display: flex;
@@ -32,12 +35,37 @@ body {
   padding: 5px;
 }
 .sidebarcontainer {
-  color: white;
+  border-radius: 20px;
   margin: 5% 0px;
-  background-color: #4E4D4D;
+  background-color: #4e4d4d;
+  flex-direction: column;
   display: flex;
   height: 80%;
   width: 15%;
+}
+.sidebarcontainer div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.sidebarcontainer div div {
+  text-align: center;
+  width: 100%;
+  padding: 3px 0px;
+  margin: auto;
+}
+.sidebarcontainer div div .link {
+  width: 100%;
+  text-decoration: none;
+  padding: 10px 0px;
+  color: white;
+}
+.sidebarcontainer div div .link:hover {
+  background-color: #d48c00;
+}
+.active {
+  background-color: #d48c00;
 }
 .bodycontainer {
   color: white;
@@ -53,20 +81,229 @@ body {
   height: 10%;
   overflow-y: scroll;
 }
-.currentMapDetailsSegment{
+.currentMapDetailsSegment {
   display: flex;
   width: 100%;
   height: 80%;
   overflow-y: scroll;
 }
 .historysegment {
+  border-radius: 20px;
+
   display: flex;
   width: 100%;
   height: 10%;
 }
-.termsHistory{
+.termsCurrent {
   flex-direction: column;
   display: flex;
   width: 100%;
   height: 100%;
+}
+.termsHistory {
+  margin: auto;
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  height: 100%;
+  overflow-x: auto;
+}
+.termsHistory {
+  padding: 10px;
+}
+.allTimeTermsHistory {
+  flex-direction: column;
+  margin: auto;
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  height: 100%;
+  overflow-x: auto;
+}
+.StoredTermId {
+  min-width: 100px;
+  overflow-x: auto;
+  margin: auto 10px;
+  width: 15%;
+  height: 60%;
+}
+.historyLinkItem {
+  min-width: 100px;
+  overflow-x: hidden;
+  margin: auto 10px;
+  width: 100%;
+  height: 45px;
+  margin: auto;
+}
+.historyLinkItem button {
+  overflow: hidden;
+  text-align: left;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  border: 0px solid;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  cursor: pointer;
+}
+.historyLinkItem button:hover {
+  background-color: #d48c00;
+}
+.StoredTermId button {
+  background-color: #d48c00;
+  color: white;
+  border-radius: 20px;
+  border: 0px solid;
+  width: 90%;
+  height: 100%;
+  font-size: 18px;
+  cursor: pointer;
+}
+.StoredTermId button:focus {
+  outline: none;
+}
+.StoredTermId button:hover {
+  background-color: #292929;
+  font-size: 25px;
+  color: #d48c00;
+}
+.oneTerm {
+  width: 95%;
+  margin: 10px auto;
+  box-shadow: 1px 1px #d48c00;
+}
+.termHeader {
+  width: 90%;
+  display: flex;
+  margin: auto;
+}
+
+.date {
+  width: 30%;
+  display: flex;
+  padding: 10px;
+}
+.word {
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+}
+.definitions {
+  width: 90%;
+  margin: auto;
+}
+.definitionHeader {
+  display: flex;
+}
+.definitions .definitionHeader div h3 {
+  padding: 10px;
+}
+.definitions .definitionHeader div button {
+  border: 0px solid;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 10px;
+}
+.examples .definitionHeader div button {
+  border: 0px solid;
+  background-color: transparent;
+  padding: 10px;
+}
+.definitions .definitionHeader div button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.examples .definitionHeader div button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.definition {
+  padding: 10px;
+}
+.examples {
+  width: 90%;
+  margin: auto;
+}
+.examples h3 {
+  padding: 10px;
+}
+.exaplesContainer {
+  display: flex;
+}
+.example {
+  padding: 10px;
+}
+.permalink {
+  width: 90%;
+  padding: 10px;
+  margin: auto;
+}
+.permalink a {
+  list-style: none;
+  color: white;
+}
+.permalink a:hover {
+  color: #d48c00;
+}
+.thumbs {
+  width: 90%;
+  display: flex;
+  margin: auto;
+}
+.thumbsUp {
+  width: 10%;
+}
+.thumbsDown {
+  width: 10%;
+}
+.thumbsUp img {
+  width: 20px;
+  margin: 10px;
+}
+.thumbsDown img {
+  width: 20px;
+  margin: 10px;
+}
+.searchField {
+  width: 70%;
+  height: 60%;
+  margin: auto;
+}
+.searchFieldForm {
+  width: 100%;
+  height: 100%;
+}
+.searchFieldForm input {
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #4e4d4d;
+  padding-left: 20px;
+  cursor: text;
+  border: 0px solid;
+  border-radius: 20px;
+  color: #ccc;
+}
+.searchFieldForm input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mainContainer {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .sidebarcontainer {
+    width: 90%;
+    margin: auto;
+    height: 15%;
+  }
+  .bodycontainer {
+    width: 100%;
+    height: 70%;
+  }
 }
