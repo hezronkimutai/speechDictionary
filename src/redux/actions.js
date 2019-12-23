@@ -10,10 +10,13 @@ export const addTerm = content => {
     content
   }
 }};
-export const addInput = content => ({
+export const addInput = content => {
+  console.log('====fff====',content);
+  
+  return {
   type: ADD_INPUT,
   payload: {content}
-});
+}};
 export const addCurrentId = content => {
   return ({
   type: ADD_CURRENT_ID,

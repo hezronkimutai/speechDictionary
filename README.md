@@ -29,19 +29,19 @@ The site is published [here](https://speechdictionary.herokuapp.com/)
 
 **Testing**
 
-    - `git clone https://github.com/hezronkimutai/speechDictionary.git`
+`git clone https://github.com/hezronkimutai/speechDictionary.git`
 
-    - `git checkout develop`
+`git checkout develop`
 
-    - `npm i`
-    - `npm start
+`npm i`
+`npm start`
+- Navigate the site using it's link to experience it's stated features
 
-    - Navigate the site using it's link to experience it's stated features
-Acknowledgements:
+# Acknowledgements:
 [RapidApi: Urban Dictionary API](https://rapidapi.com/community/api/urban-dictionary)
 [RapidApi: text to speech api](https://rapidapi.com/voicerss/api/text-to-speech-1)
 
-*Authors*
+# Authors
 
 - Hezron Kimutai - Github - hezronkimutai
 
