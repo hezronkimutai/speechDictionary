@@ -4,7 +4,7 @@ import TermDetails from "./TermDetails";
 import { getStore } from "../../redux/selectors";
 
 const CurrentTermDetails = terms => {
-  const allTerms = terms.content?terms.content.list:[];
+  const allTerms = terms.content?terms.content.list:[];  
   return (
     <div className="termsCurrent">
       {allTerms && allTerms.length
@@ -17,12 +17,14 @@ const CurrentTermDetails = terms => {
 };
 
 const mapStateToProps = state => {
-  const _terms = getStore(state)
-  const allTerms = _terms.terms
-  const currentId= _terms.currentId
+  console.log('=======',state);
+  
+  const allTerms = state.terms
+  const currentId= state.currentId
   const currentTerm = allTerms.filter((term)=>{
     return term.id == currentId
   })
+
   return currentTerm[0]? currentTerm[0]:{};
 };
 
