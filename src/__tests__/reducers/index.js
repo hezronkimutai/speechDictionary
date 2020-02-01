@@ -1,5 +1,6 @@
 import reducer from "../../redux/reducers/terms";
 
+
 describe("Test actions", () => {
   it("Should handle adding a term", () => {
     expect(reducer({},{
