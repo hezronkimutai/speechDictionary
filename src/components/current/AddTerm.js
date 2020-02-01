@@ -4,8 +4,9 @@ import { addTerm,addInput } from "../../redux/actions";
 import axios from "axios";
 
 const SearchTerm = props => {
-  const input = props.terms.input;
   const updateInput = input => {
+    console.log('===kk====',props.terms.input);
+    
     props.addInput(input);
   };
   
@@ -21,17 +22,19 @@ const SearchTerm = props => {
     props.addTerm(response.data);
   };
   useEffect(() => {
-    handleGetMeaning(input);
+    console.log('......',props.terms.input);
+    
+    handleGetMeaning(props.terms.input);
   },[]);
   const handleAddTerm = (e) => {
-    handleGetMeaning(input);
+    handleGetMeaning(props.terms.input);
     e.preventDefault();
     props.addInput('');
   };
   return (
     <div className="searchField">
       <form className="searchFieldForm" onSubmit={handleAddTerm}>
-      <input placeholder="Find meaning" onChange={e => updateInput(e.target.value)} value={input} />
+      <input placeholder="Find meaning" onChange={e => updateInput(e.target.value)} value={props.terms.input} />
       </form>
     </div>
   );
