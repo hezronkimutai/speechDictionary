@@ -17,12 +17,13 @@ const CurrentTermDetails = terms => {
 };
 
 const mapStateToProps = state => {
-  console.log('=======',state);
   
   const allTerms = state.terms
-  const currentId= state.currentId
-  const currentTerm = allTerms.filter((term)=>{
-    return term.id == currentId
+  const currentId= allTerms.currentId
+  const currentTerm = allTerms.terms.filter((term)=>{
+    console.log(term.id,currentId);
+    
+    return term.id === currentId
   })
 
   return currentTerm[0]? currentTerm[0]:{};
