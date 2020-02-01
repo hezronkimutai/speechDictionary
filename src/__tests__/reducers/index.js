@@ -1,5 +1,6 @@
 import reducer from "../../redux/reducers/terms";
 
+
 describe("Test actions", () => {
   it("Should handle adding a term", () => {
     expect(reducer({},{
@@ -11,4 +12,8 @@ describe("Test actions", () => {
     payload: []
   })).toEqual( {"content": "word", "currentId": undefined});
 });
+expect(reducer({},{content: "word",id:90},{
+    type: "ADD_TERM",
+    payload: []
+  })).toEqual( {});
 });
