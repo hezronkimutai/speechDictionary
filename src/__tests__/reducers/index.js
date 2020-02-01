@@ -11,4 +11,8 @@ describe("Test actions", () => {
     payload: []
   })).toEqual( {"content": "word", "currentId": undefined});
 });
+expect(reducer({},{content: "word",id:90},{
+    type: "ADD_TERM",
+    payload: []
+  })).toEqual( {});
 });
