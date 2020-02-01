@@ -4,9 +4,7 @@ import { addTerm,addInput } from "../../redux/actions";
 import axios from "axios";
 
 const SearchTerm = props => {
-  const updateInput = input => {
-    console.log('===kk====',props.terms.input);
-    
+  const updateInput = input => {    
     props.addInput(input);
   };
   
@@ -21,9 +19,7 @@ const SearchTerm = props => {
     const response = await axios.get(`${BASE_URL}${term}`,options);
     props.addTerm(response.data);
   };
-  useEffect(() => {
-    console.log('......',props.terms.input);
-    
+  useEffect(() => {    
     handleGetMeaning(props.terms.input);
   },[]);
   const handleAddTerm = (e) => {

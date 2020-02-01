@@ -14,6 +14,11 @@ describe('First React component test with Enzyme', () => {
    })
  
    it('renders without crashing', () => {
+     const inputField = wrapper.find('input')
+     inputField.simulate('change')
+     const form = wrapper.find('form')
+     form.simulate('submit')
+     expect(jest.fn().mock.calls).toBeDefined();
     {wrapper}
     });
 });
