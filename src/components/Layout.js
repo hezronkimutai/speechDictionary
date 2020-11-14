@@ -18,7 +18,7 @@ const Layout = () => (
         <h2>SpeechDictionary</h2>
       </div>
       <div className="mainContainer">
-        <div className="sideBarContainer">
+        {/* <div className="sideBarContainer">
           <div>
             <div>
               <NavLink exact activeClassName="active" className="link" to="/">
@@ -36,7 +36,7 @@ const Layout = () => (
               </NavLink>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="bodyContainer">
           <div className="mainBodySegment">
             <AddTerm />
